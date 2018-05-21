@@ -59,3 +59,6 @@ title: SQL Server基础知识整理
 ### key-range lock
 避免幻象读。保护key-range内的数据不受到任何修改。
 
+### indexed view
+物化视图。
+
