@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GCP Note
+title: GCP Dataflow
 ---
 
 ## stream vs batch
