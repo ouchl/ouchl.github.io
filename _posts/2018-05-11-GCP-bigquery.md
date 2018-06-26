@@ -89,3 +89,21 @@ Provide near-real-time backup
 #### app profile
 An application profile, or app profile, stores settings that tell your Cloud Bigtable instance how to handle incoming requests from an application. When one of your applications connects to a Cloud Bigtable instance, it can specify an app profile, and Cloud Bigtable uses that app profile for any requests that the application sends over that connection.
 It also prevents you from enabling single-row transactions in an app profile that uses multi-cluster routing, because there's no safe way to enable both of these features at once.
+
+If your data is in Avro format, which is self-describing, BigQuery can determine the schema directly.
+If the data is in JSON or CSV format, BigQuery can auto-detect the schema, but manual verification is recommended.
+To automate the process you can set up a Cloud Function to listen to a Cloud Storage event that is associated with arriving new files in a given bucket and launch the BigQuery load job.
+There is a charge for streaming data.
+All table modifications in BigQuery are ACID compliant.
+you can use BigQuery's native support for date-partitioned tables and partition expiration.
+You design, develop, and test the upgrade in parallel while the previous version of the data warehouse is serving the analysis workloads.
+
+https://cloud.google.com/solutions/bigquery-data-warehouse
+### SCD
+- Technique 1: view switching
+- Technique 2: in-place partition loading
+- Technique 3: update data masking
+- SCD Type 1: overwrite attribute value
+- SCD Type 2: change attribute value and maintain history
+use Apache Airflow API for BigQuery. For simpler orchestrations, you can rely on cron jobs. 
+BigQuery does not use or support indexes. UDFs are written in JavaScript and can include external resources, such as encryption or other libraries.
