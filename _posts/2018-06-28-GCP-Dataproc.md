@@ -1,7 +1,12 @@
-Log processing—With minimal modification, you can process large amounts of text log data per day from several sources using existing MapReduce.
+---
+layout: post
+title: GCP BigQuery BigTable
+---
 
-Reporting—Aggregate data into reports and store the data in BigQuery. Then you can push the aggregate data to applications that power dashboards and conduct analysis.
+- Log processing—With minimal modification, you can process large amounts of text log data per day from several sources using existing MapReduce.
 
-On-demand Spark clusters—Quickly launch ad-hoc clusters to analyze data is stored in blob storage using Spark (Spark SQL, PySpark, Spark shell).
+- Reporting—Aggregate data into reports and store the data in BigQuery. Then you can push the aggregate data to applications that power dashboards and conduct analysis.
 
-Machine learning—Use the Spark Machine Learning Libraries (MLlib), which are preinstalled on the cluster, to customize and run classification algorithms.
+- On-demand Spark clusters—Quickly launch ad-hoc clusters to analyze data is stored in blob storage using Spark (Spark SQL, PySpark, Spark shell).
+
+- Machine learning—Use the Spark Machine Learning Libraries (MLlib), which are preinstalled on the cluster, to customize and run classification algorithms.
