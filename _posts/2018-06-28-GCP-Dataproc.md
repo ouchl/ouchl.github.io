@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GCP BigQuery Dataproc
+title: GCP Dataproc
 ---
 
 - Log processing—With minimal modification, you can process large amounts of text log data per day from several sources using existing MapReduce.
