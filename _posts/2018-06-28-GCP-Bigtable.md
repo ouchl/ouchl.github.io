@@ -2,6 +2,7 @@
 layout: post
 title: GCP BigTable
 ---
+一个node最多2559GB.
 
 Tall schemas are often used for storing time-series events, data that is keyed in some portion by a timestamp, with relatively fewer columns per row. Wide schemas follow the opposite approach, a simplistic identifier as the row key along with a large number of columns.
 
