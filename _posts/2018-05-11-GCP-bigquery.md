@@ -13,7 +13,7 @@ title: GCP BigQuery BigTable
 - use the default table expiration to automatically delete the data
 
 ## 优化
-
+- Partitioned tables perform better than tables sharded by date.
 - Avoid SELECT *
 - Prune partitioned queries use the _PARTITIONTIME pseudo column to filter the partitions.
 - Denormalize data whenever possible Nested and repeated fields can maintain relationships without the performance impact of preserving a relational (normalized) schema. shuffling means data transfer
