@@ -22,3 +22,5 @@ out of order data. watermark太小，aggregate等待时间太长，watermark太�
 - 以统一的方式开发批处理流水线和流处理流水线
 - 使用 Apache Beam
 - 支持跨 Cloud Dataflow、Apache Spark 和 Apache Flink 移植运行中的流水线
+
+side input value from other branch
