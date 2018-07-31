@@ -6,6 +6,7 @@ title: Hive基础知识整理
 ## Hive基本概念
 
 Hive是基于Hadoop的数据仓库。Hive的作用是大数据概括查询分析，可以添加用户自定义函数（UDF）方便数据分析。Hive不好用来处理线上事务，最好用途是传统数据仓库任务。
+文件夹对应表。create table定义了查询时的schema。
 
 ### 数据单元
 
@@ -92,9 +93,9 @@ COMMENT 'This is the staging page view table'
 ROW FORMAT DELIMITED FIELDS TERMINATED BY '44' LINES TERMINATED BY '12'
 STORED AS TEXTFILE
 LOCATION '/user/data/staging/page_view';
- 
+
 hadoop dfs -put /tmp/pv_2008-06-08.txt /user/data/staging/page_view
- 
+
 FROM page_view_stg pvs
 INSERT OVERWRITE TABLE page_view PARTITION(dt='2008-06-08', country='US')
 SELECT pvs.viewTime, pvs.userid, pvs.page_url, pvs.referrer_url, null, null, pvs.ip
@@ -148,4 +149,3 @@ INSERT OVERWRITE TABLE page_view PARTITION(dt='2008-06-08', country)
   -  `hive.exec.max.dynamic.partitions` 一条DML语句创建的最大分区数。
   -  `hive.exec.max.created.files` 最大文件数。
 - 为了防止用户意外将所有分区都指定为动态分区，设置参数hive.exec.dynamic.partition.mode=strict来保证最少有一个分区是静态分区。Hive 0.9.0之后动态分区是默认开启的。
-
