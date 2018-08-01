@@ -6,7 +6,8 @@ title: Hive基础知识整理
 ## Hive基本概念
 
 Hive是基于Hadoop的数据仓库。Hive的作用是大数据概括查询分析，可以添加用户自定义函数（UDF）方便数据分析。Hive不好用来处理线上事务，最好用途是传统数据仓库任务。
-文件夹对应表。create table定义了查询时的schema。
+文件夹对应表。create table定义了查询时的schema。external table与文件夹的管理分开。每一个partition对应一个folder。名字是partition_column='x'。skewed table字段
+某一个特殊值和其他值分开存放。CLUSTERED table根据字段的哈希值分开存放，Join时速度更快。partition是伪字段，字段不需要再定义partition字段。同一个folder可以对应不同的table，实现schema的校验功能。
 
 ### 数据单元
 
