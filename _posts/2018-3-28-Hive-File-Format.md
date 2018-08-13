@@ -3,7 +3,7 @@ layout: post
 title: Hive文件格式
 ---
 
-## HiveServer2 
+## HiveServer2
 
 HiveServer2是供客户端连接Hive的服务器，支持多用户并发访问和验证。支持JDBC和ODBC。
 
@@ -36,7 +36,7 @@ Beeline是替换Hive CLI的命令行工具。基于SQLLine CLI的JDBC客户端�
 设置：
 
 |-----------------+------------+-----------------|
-| 参数  | 默认  |  描述 | 
+| 参数  | 默认  |  描述 |
 |---|---|---|
 | orc.compress  | ZLIB  | 压缩算法  |
 | orc.compress.size  |  262,144 | 压缩块大小  |
@@ -49,8 +49,9 @@ Beeline是替换Hive CLI的命令行工具。基于SQLLine CLI的JDBC客户端�
 
 按列存储的优势在于高压缩比，高性能。
 提供三种索引，文件级别的列索引，stripe级别的列索引，行级别的列索引。文件和stripe级别的统计信息放在文件footer中，行级别的索引放在包括列统计信息和每一个行组的起始位置。
+(range index)
 
-### Parquet 
+### Parquet
 
 [Parquet](http://parquet.apache.org/)Hadoop生态下的按列存储格式。
 ORC+ZLIB比Paqruet+Snappy性能高。
