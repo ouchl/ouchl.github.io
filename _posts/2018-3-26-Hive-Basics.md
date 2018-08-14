@@ -150,3 +150,12 @@ INSERT OVERWRITE TABLE page_view PARTITION(dt='2008-06-08', country)
   -  `hive.exec.max.dynamic.partitions` 一条DML语句创建的最大分区数。
   -  `hive.exec.max.created.files` 最大文件数。
 - 为了防止用户意外将所有分区都指定为动态分区，设置参数hive.exec.dynamic.partition.mode=strict来保证最少有一个分区是静态分区。Hive 0.9.0之后动态分区是默认开启的。
+
+优化：
+- use tez
+- ORC file 
+ - predicate pushdown only read records satify where clause
+ - compression
+- use vectorization process records in 1024 rows batch instead of each row
+- cost based query optimization ananlyze table before querying
+- write good sql avoid joining
