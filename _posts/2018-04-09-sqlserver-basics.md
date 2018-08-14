@@ -62,3 +62,8 @@ title: SQL Server基础知识整理
 ### indexed view
 物化视图。
 
+#### slowly changing dimension
+- type 1 update record
+- type 2 create new dimension record
+- type 3 create a current value field
+
