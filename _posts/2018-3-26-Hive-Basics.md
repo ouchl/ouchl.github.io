@@ -165,3 +165,12 @@ LLAP:
 - LLAP shares its in-memory cache among all SQL users, maximizing the use of this scarce resource.
 - LLAP has fine-grained resource management and preemption, making it great for highly concurrent access across many users.
 - LLAP is 100% compatible with existing Hive SQL and Hive tools.
+
+#### ACID transaction
+- Transactional Tables Hive support single-table transaction
+- Partition table for optimization
+- ACID Operations (INSERT / UPDATE / DELETE)
+- Primary Key
+- Streaming Ingest
+- Optimistic Concurrency first committer win at partition level
+- Compactions
