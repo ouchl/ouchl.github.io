@@ -159,3 +159,9 @@ INSERT OVERWRITE TABLE page_view PARTITION(dt='2008-06-08', country)
 - use vectorization process records in 1024 rows batch instead of each row
 - cost based query optimization ananlyze table before querying
 - write good sql avoid joining
+
+LLAP:
+- LLAP uses persistent query servers to avoid long startup times and deliver fast SQL.
+- LLAP shares its in-memory cache among all SQL users, maximizing the use of this scarce resource.
+- LLAP has fine-grained resource management and preemption, making it great for highly concurrent access across many users.
+- LLAP is 100% compatible with existing Hive SQL and Hive tools.
