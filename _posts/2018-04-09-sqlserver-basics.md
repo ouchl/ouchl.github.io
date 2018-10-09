@@ -67,3 +67,11 @@ title: SQL Server基础知识整理
 - type 2 create new dimension record
 - type 3 create a current value field
 
+### tuning
+三种metric：
+- CPU使用 影响因素过多不适用
+- 执行时间 
+- 磁盘使用 代价很高，适合作用评判标准
+所以最好使用logical page reads因为phisical page reads不稳定，取决于数据是否在内存中。logical page reads可重复，不受使用环境的影响。
+从sys.dm_exec_query_stats取得花销最大的query，Cardinality is simply the number of distinct values that appear in a column. 除非表的数据量很小，要保证join两边的列都有索引。We avoided creating a useless index by examining the cardinality of the data. Cardinality不等于selectivity.
+In a table having a clustered index, all nonclustered indexes include the clustering key. As a general rule, you want to make the most selective search argument the first column in a multi-column index. create index include index to cover the query. Make sure the cost of the solution does not outweigh the benefits of optimization.  
