@@ -76,4 +76,4 @@ title: SQL Server基础知识整理
 
 从sys.dm_exec_query_stats取得花销最大的query，Cardinality is simply the number of distinct values that appear in a column. 除非表的数据量很小，要保证join两边的列都有索引。We avoided creating a useless index by examining the cardinality of the data. Cardinality不等于selectivity.
 In a table having a clustered index, all nonclustered indexes include the clustering key. As a general rule, you want to make the most selective search argument the first column in a multi-column index. create index include index to cover the query. Make sure the cost of the solution does not outweigh the benefits of optimization.  
-Many-to-many merge join速度慢，尽量避免，尽量建立约束，如唯一约束，帮助执行计划优化。
+Many-to-many merge join速度慢，尽量避免，尽量建立约束，如唯一约束，帮助执行计划优化。a searchable argument will do you no good if there is not a relevant index on the column。You should avoid functions in a search argument if possible, but if you have to use a function in your search arguments, you should get in the habit of looking at the execution plan to see how the optimizer is treating it.
